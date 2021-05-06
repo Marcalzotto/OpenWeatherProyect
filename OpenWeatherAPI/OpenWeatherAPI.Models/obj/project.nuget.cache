@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mk1ZyfMV6Dq9Qc8PqUQhh3wXWOje8rH9pqS/xBZhGaZ9pfFEzbjcCdz8xQPx3tvfoCBXlC9W6USjcuJYF0z0PQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Models\\OpenWeatherAPI.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marco\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,45 @@
+<div  id="container">
+    <h1>{{title}}</h1>
+    <form [formGroup]="officeForm" (submit)="onSubmit()">
+  <!-- <span><app-country-list [countryList]="countries" [updateMode]="true" [countryId]="this.SelectedCountryId" (countryIdEvent)='getCountryId($event)'></app-country-list></span> -->
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Select Country</mat-label>
+                <mat-select formControlName="countryList" placeholder="Select Country" [(ngModel)]="SelectedCountryId" (selectionChange)="selectedChange(SelectedCountryId)" [disabled]="readonlySelect" required>
+                    <mat-option *ngFor="let country of countries" [value]="country.id">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Select City</mat-label>
+                <mat-select formControlName="cityList" placeholder="Select City" [(ngModel)]="SelectedCity" [disabled]="readonlySelect" required> 
+                    <mat-option *ngFor="let city of cities" [value]="city.id">
+                        {{city.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngIf="noCitiesMessaje">
+            <span>There is no cities available for this country</span>
+        </div>    
+        <div>
+            <mat-form-field>
+                <input matInput  formControlName="officeDesc" placeholder="Office Description..." [(ngModel)]="office.description">
+                <mat-error *ngIf="this.officeForm.value.officeDesc === ''">Description is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div id="form-buttons">
+            <span><button mat-raised-button type="submit" color="primary" [disabled]="!enableSubmitButton()">Save</button></span><span> <button mat-raised-button type="reset" (click)="clearMessaje()" [disabled]="updateMode">Reset</button></span>
+        </div>
+        <div id="final-messaje">
+            <span>{{finalMessajeOp}} <mat-icon color={{color}}>{{icon}}</mat-icon></span>
+        </div>
+    
+    </form>
+    <!-- <mat-icon color='warn'>highlight_off</mat-icon>
+    <mat-icon color='primary'>check_circle_outline</mat-icon> -->
+
+</div>

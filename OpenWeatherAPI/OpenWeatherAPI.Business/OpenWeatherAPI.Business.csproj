@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenWeatherAPI.BusinessContracts\OpenWeatherAPI.BusinessContracts.csproj" />
+    <ProjectReference Include="..\OpenWeatherAPI.DataContracts\OpenWeatherAPI.DataContracts.csproj" />
+    <ProjectReference Include="..\OpenWeatherAPI.Entities\OpenWeatherAPI.Entities.csproj" />
+    <ProjectReference Include="..\OpenWeatherAPI.Models\OpenWeatherAPI.Models.csproj" />
+  </ItemGroup>
+
+</Project>

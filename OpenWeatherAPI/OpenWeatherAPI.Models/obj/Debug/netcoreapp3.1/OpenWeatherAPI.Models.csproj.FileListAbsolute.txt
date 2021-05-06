@@ -1,0 +1,12 @@
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\bin\Debug\netcoreapp3.1\OpenWeatherAPI.Models.deps.json
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\bin\Debug\netcoreapp3.1\OpenWeatherAPI.Models.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\bin\Debug\netcoreapp3.1\OpenWeatherAPI.Models.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.csprojAssemblyReference.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.AssemblyInfoInputs.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.AssemblyInfo.cs
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.csproj.CopyComplete
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\bin\Debug\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\bin\Debug\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Models\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Models.csproj.CoreCompileInputs.cache

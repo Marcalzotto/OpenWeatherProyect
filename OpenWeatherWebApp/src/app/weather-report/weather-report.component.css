@@ -1,0 +1,124 @@
+/* Main form */
+#weather-form{
+    text-align: center;
+    margin-top: 20px;
+}
+/* Main form */
+
+/*styles for office list with mat-list-option*/
+.offices-list
+{
+    border: 1px solid rgb(197, 193, 193);
+    text-align: left;
+    overflow-y: hidden;
+    max-height: 200px;
+    width: 36%;
+    margin-left: 32%;
+    margin-right: 32%;
+    overflow-y: scroll;
+
+}
+
+.office-label{
+    text-align: left;
+    width: 36%;
+    margin-left: 32%;
+    margin-right: 32%;
+    
+}
+
+.office-sub{
+    width: 36%;
+    margin-left: 32%;
+    margin-right: 32%;
+    
+}
+
+.office-sub p{
+    text-align: left;
+}
+
+.offices-sub .total-sub-offices{
+    margin-left: 20px;
+}
+
+.office-label mat-label {
+    margin-left: 0px;
+}
+
+/*styles for office list with mat-list-option*/
+
+
+ /*historical search classes*/
+  
+ .historical-search
+ {
+    margin-top: 10px;
+    text-align: left;
+    width: 36%;
+    margin-left: 32%;
+    margin-right: 32%;
+    
+ }
+
+
+ .historical-search:first
+ {
+    text-align: center;
+ }
+
+ .historical-search div span{
+     margin-left: 2%;
+     margin-right: 2%;
+ }
+
+ .historical-search-pickers span
+ {
+    margin-left: 1%;
+    margin-right: 1%;
+ }
+/*historical search classes*/
+
+/*form button styles*/
+ .buttons{
+     margin-top: 10px;
+ }
+/*form button styles*/
+
+/*styles for mat-table weather condition*/
+  .conditions-container{
+        margin-top: 20px;
+        text-align: center;
+  }
+
+  .invisible{
+      visibility: hidden !important;
+  }
+
+  table{
+      width: 100%;
+  }
+
+  table th{
+      text-align: center;
+  }
+
+  .desc-weather{
+      list-style: none;
+      display:grid;
+      vertical-align: middle;
+  }
+
+  .list-container span{
+    margin-right: 3%;
+    margin-left: 3%;
+  }
+
+/*styles for mat-table weather condition*/
+
+/*no results div*/
+#no-results{
+ text-align: center;
+ font-size: 3em;
+ color: rgb(199, 177, 177);   
+}

@@ -1,0 +1,14 @@
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.deps.json
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.Models.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.Models.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.csprojAssemblyReference.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.AssemblyInfoInputs.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.AssemblyInfo.cs
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.csproj.CoreCompileInputs.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.csproj.CopyComplete
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.DataContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.DataContracts.pdb

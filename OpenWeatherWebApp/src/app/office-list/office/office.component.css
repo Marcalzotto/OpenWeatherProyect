@@ -1,0 +1,17 @@
+#container{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container form div span{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#final-messaje{
+    margin-top: 30px;
+}
+
+#form-buttons span{
+    margin-top: 15px;
+}

@@ -1,0 +1,56 @@
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+.view-title{
+    font-size: 2em;
+    margin-left: 8em;
+}
+
+.new-office-link{
+    float: right;
+    margin-bottom: 5px;
+}
+
+#container{
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+.search-office-btn{
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mat-container{
+    margin-top: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    max-height: 20px;
+}
+
+table{
+    text-align: center;
+    width: 100%;
+}
+
+table th{
+    text-align: center;
+}
+
+table td button{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.visible{
+    visibility: hidden !important;
+}
+
+#no-results{
+    margin-top: 20px;
+    font-size: 60px;
+    color: rgb(199, 177, 177);   
+}

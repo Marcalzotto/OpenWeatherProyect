@@ -1,0 +1,13 @@
+Diseños_interfaces/
+Documentacion/EF_Commands.txt
+Documentacion/articles.txt
+Documentacion/AngularCli_commands.txt
+Documentacion/Configuracion iis.txt
+OpenWeatherAPI/OpenWeatherAPI/bin/
+OpenWeatherAPI/OpenWeatherAPI.Business/bin/
+OpenWeatherAPI/OpenWeatherAPI.BusinessContracts/bin/
+OpenWeatherAPI/OpenWeatherAPI.Data/bin/
+OpenWeatherAPI/OpenWeatherAPI.DataContracts/bin/
+OpenWeatherAPI/OpenWeatherAPI.Entities/bin/
+OpenWeatherAPI/OpenWeatherAPI.ModelContracts/bin/
+OpenWeatherAPI/OpenWeatherAPI.Models/bin/

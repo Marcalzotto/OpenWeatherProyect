@@ -1,0 +1,142 @@
+CREATE DATABASE [OpenWeatherDB]
+GO
+
+USE [OpenWeatherDB]
+GO
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__EFMigrationsHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Branch_office]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Branch_office](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[DESCRIPTION] [varchar](100) NOT NULL,
+	[CITY_ID] [int] NOT NULL,
+ CONSTRAINT [PK_Branch_office_1] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[City]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[City](
+	[ID] [int] NOT NULL,
+	[NAME] [varchar](100) NOT NULL,
+	[STATE] [varchar](100) NULL,
+	[LONGITUDE] [float] NOT NULL,
+	[LATITUDE] [float] NOT NULL,
+	[COUNTRY_ID] [int] NOT NULL,
+ CONSTRAINT [PK_City] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Country]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Country](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CODE] [varchar](3) NOT NULL,
+	[NAME] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_Country_1] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Weather_condition]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Weather_condition](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[BASE] [varchar](50) NOT NULL,
+	[TEMPERATURE] [float] NOT NULL,
+	[TEMP_MIN] [float] NOT NULL,
+	[TEMP_MAX] [float] NOT NULL,
+	[FEELS_LIKE] [float] NOT NULL,
+	[PRESSURE] [int] NOT NULL,
+	[HUMIDITY] [int] NOT NULL,
+	[SEA_LEVEL] [int] NULL,
+	[GROUND_LEVEL] [int] NULL,
+	[WIND_SPEED] [float] NOT NULL,
+	[WIND_DEGREES] [int] NOT NULL,
+	[WIND_GUST] [float] NULL,
+	[CLOUDS] [int] NOT NULL,
+	[RAIN_VOLUME_1H] [float] NULL,
+	[RAIN_VOLUME_3H] [float] NULL,
+	[SNOW_VOLUME_1H] [float] NULL,
+	[SNOW_VOLUME_3H] [float] NULL,
+	[SUNRISE] [int] NOT NULL,
+	[SUNSET] [int] NOT NULL,
+	[TIMEZONE] [int] NOT NULL,
+	[DT] [int] NOT NULL,
+	[CITY_ID] [int] NOT NULL,
+	[STATUS_CODE] [int] NOT NULL,
+	[REG_DATE] [datetime] NOT NULL,
+ CONSTRAINT [PK_Weather_condition] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Weather_type]    Script Date: 03/05/2021 20:01:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Weather_type](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MAIN] [varchar](50) NOT NULL,
+	[DESCRIPTION] [varchar](50) NOT NULL,
+	[ICON] [varchar](50) NOT NULL,
+	[CONDITION_ID] [int] NOT NULL,
+	[TYPE_ID] [int] NOT NULL,
+ CONSTRAINT [PK_Weather_type] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Branch_office]  WITH CHECK ADD  CONSTRAINT [FK_Branch_office_City1] FOREIGN KEY([CITY_ID])
+REFERENCES [dbo].[City] ([ID])
+GO
+ALTER TABLE [dbo].[Branch_office] CHECK CONSTRAINT [FK_Branch_office_City1]
+GO
+ALTER TABLE [dbo].[City]  WITH CHECK ADD  CONSTRAINT [FK_City_Country1] FOREIGN KEY([COUNTRY_ID])
+REFERENCES [dbo].[Country] ([ID])
+GO
+ALTER TABLE [dbo].[City] CHECK CONSTRAINT [FK_City_Country1]
+GO
+ALTER TABLE [dbo].[Weather_condition]  WITH CHECK ADD  CONSTRAINT [FK_Weather_condition_City] FOREIGN KEY([CITY_ID])
+REFERENCES [dbo].[City] ([ID])
+GO
+ALTER TABLE [dbo].[Weather_condition] CHECK CONSTRAINT [FK_Weather_condition_City]
+GO
+ALTER TABLE [dbo].[Weather_type]  WITH CHECK ADD  CONSTRAINT [FK_Weather_type_Weather_condition] FOREIGN KEY([CONDITION_ID])
+REFERENCES [dbo].[Weather_condition] ([ID])
+GO
+ALTER TABLE [dbo].[Weather_type] CHECK CONSTRAINT [FK_Weather_type_Weather_condition]
+GO

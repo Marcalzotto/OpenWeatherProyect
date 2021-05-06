@@ -1,0 +1,213 @@
+<div id="weather-form">
+  <h1>{{formTitle}}</h1>
+  <form [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
+    <div class="list-container">
+      <span>
+        <app-country-list [countryList]="countries" (countryIdEvent)='getCountryId($event)'>
+        </app-country-list>
+      </span>
+      <span>
+        <mat-form-field appearance="fill">
+          <mat-label>Temperature unit</mat-label>
+          <mat-select [(value)]="selected" formControlName="unitsSelect">
+            <mat-option *ngFor="let unit of units" [value]="unit.value">
+              {{unit.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+    <div *ngIf="offices">
+      <div class="office-label">
+        <mat-label>Select Offices - Total: {{this.offices.length}}</mat-label>
+      </div>
+      <div class="offices-list">
+        <mat-selection-list formControlName="officesList">
+          <mat-list-option *ngFor="let office of offices" class="list-option" [value]="office.cityId">
+            {{office.description}}
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+      <div class="office-sub">
+        <p *ngIf="this.weatherForm.value.officesList">Selected Offices: {{this.weatherForm.value.officesList.length}}
+        </p>
+      </div>
+    </div>
+    <div *ngIf="this.noOfficesMessajes">
+      There are no offices for this country, please register offices to get weather information.
+    </div>
+    <div class="historical-search-pickers">
+      <span>
+        <mat-checkbox formControlName="historicalCheck" (change)="onCheckedChange($event)">
+          Historical Searh
+        </mat-checkbox>
+      </span>
+      <span *ngIf="this.weatherForm.value.historicalCheck">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [formGroup]="weatherForm" [rangePicker]="picker" disabled="true">
+            <input matStartDate formControlName="dateFrom" placeholder="Start date">
+            <input matEndDate formControlName="dateTo" placeholder="End date">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker disabled="false" [max]="maxDate"></mat-date-range-picker>
+          <mat-error *ngIf="this.DateValidator">Invalid Range: Future dates are not allowed</mat-error>
+        </mat-form-field>
+      </span>
+    </div>
+    <div>
+      <mat-error *ngIf="this.datesErrorMessaje">Date from must be less than or equal to Date to</mat-error>
+    </div>
+    <div class="buttons">
+      <button mat-raised-button color="warn" type="submit"
+        [disabled]="!enableSubmitButton()">{{this.buttonText}}</button>
+    </div>
+  </form>
+</div>
+<div class="conditions-container">
+  <table mat-table [dataSource]="obs | async" class="mat-elevation-z8" *ngIf="this.dataSource.data.length !== 0">
+    <ng-container matColumnDef="Office">
+      <th mat-header-cell *matHeaderCellDef> Office </th>
+      <td mat-cell *matCellDef="let condition"> {{condition.city.branchOffice.description}} </td>
+    </ng-container>
+    <ng-container matColumnDef="City">
+      <th mat-header-cell *matHeaderCellDef> City</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.city.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Longitude">
+      <th mat-header-cell *matHeaderCellDef>Lon</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.city.longitude}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Latitude">
+      <th mat-header-cell *matHeaderCellDef>Lat </th>
+      <td mat-cell *matCellDef="let condition"> {{condition.city.latitude}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Temperature">
+      <th mat-header-cell *matHeaderCellDef>Temp</th>
+      <td mat-cell *matCellDef="let condition">
+        <div [ngSwitch]="selected">
+          <span *ngSwitchCase="1">{{condition.units.tempDefault}}</span>
+          <span *ngSwitchCase="2">{{condition.units.tempMetrics}}</span>
+          <span *ngSwitchCase="3">{{condition.units.tempImperial}}</span>
+          <span *ngSwitchDefault>{{condition.units.tempDefault}}</span>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Minimum Temprature">
+      <th mat-header-cell *matHeaderCellDef>Min Temp</th>
+      <td mat-cell *matCellDef="let condition">
+        <div [ngSwitch]="selected">
+          <span *ngSwitchCase="1">{{condition.units.tempMinDefault}}</span>
+          <span *ngSwitchCase="2">{{condition.units.tempMinMetrics}}</span>
+          <span *ngSwitchCase="3">{{condition.units.tempMinImperial}}</span>
+          <span *ngSwitchDefault>{{condition.units.tempMinDefault}}</span>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Maximum Temprature">
+      <th mat-header-cell *matHeaderCellDef>Max Temp</th>
+      <td mat-cell *matCellDef="let condition">
+        <div [ngSwitch]="selected">
+          <span *ngSwitchCase="1">{{condition.units.tempMaxDefault}}</span>
+          <span *ngSwitchCase="2">{{condition.units.tempMaxMetrics}}</span>
+          <span *ngSwitchCase="3">{{condition.units.tempMaxImperial}}</span>
+          <span *ngSwitchDefault>{{condition.units.tempMaxDefault}}</span>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Feels Like">
+      <th mat-header-cell *matHeaderCellDef>Feels Like</th>
+      <td mat-cell *matCellDef="let condition">
+        <div [ngSwitch]="selected">
+          <span *ngSwitchCase="1">{{condition.units.feelsLikeDefault}}</span>
+          <span *ngSwitchCase="2">{{condition.units.feelsLikeMetrics}}</span>
+          <span *ngSwitchCase="3">{{condition.units.feelsLikeImperial}}</span>
+          <span *ngSwitchDefault>{{condition.units.feelsLikeDefault}}</span>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Humidity">
+      <th mat-header-cell *matHeaderCellDef>Humidity</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.humidity}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Clouds">
+      <th mat-header-cell *matHeaderCellDef>Clouds</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.clouds}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Wind Speed">
+      <th mat-header-cell *matHeaderCellDef>Wind Speed</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.windSpeed}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Wind Degrees">
+      <th mat-header-cell *matHeaderCellDef>Wind Degrees</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.windDegrees}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Wind Gust">
+      <th mat-header-cell *matHeaderCellDef>Wind Gust</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.windGust | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Sea Level">
+      <th mat-header-cell *matHeaderCellDef>Sea Level</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.seaLevel | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Ground Level">
+      <th mat-header-cell *matHeaderCellDef>Ground Level</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.groundLevel | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Rain Volume 1h">
+      <th mat-header-cell *matHeaderCellDef>Rain Volume 1h</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.rainVolume1h | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Rain Volume 3h">
+      <th mat-header-cell *matHeaderCellDef>Rain Volume 3h</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.rainVolume3h | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Sunrise">
+      <th mat-header-cell *matHeaderCellDef>Sunrise</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.sunrise}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Sunset">
+      <th mat-header-cell *matHeaderCellDef>Sunset</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.sunset}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Timezone">
+      <th mat-header-cell *matHeaderCellDef>Timezone</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.timezone}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Snow Volume 1h">
+      <th mat-header-cell *matHeaderCellDef>Snow Vol 1h</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.snowVolume1h | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Snow Volume 3h">
+      <th mat-header-cell *matHeaderCellDef>Snow Vol 3h</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.snowVolume3h | nullableValuePipe}} </td>
+    </ng-container>
+    <ng-container matColumnDef="RegDate">
+      <th mat-header-cell *matHeaderCellDef>RegDate</th>
+      <td mat-cell *matCellDef="let condition"> {{condition.regDate | date:'dd/MM/yyyy hh:mm'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let condition">
+        <div class="desc-weather" *ngFor="let WeatherType of condition.weatherType">
+          <div>{{WeatherType.description}}</div>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Icon">
+      <th mat-header-cell *matHeaderCellDef>icon</th>
+      <td mat-cell *matCellDef="let condition">
+        <div class="desc-weather" *ngFor="let WeatherType of condition.weatherType">
+          <div><img src="http://openweathermap.org/img/w/{{WeatherType.icon}}.png" alt="sky descripcion"></div>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [ngClass]="{'invisible':dataSource.data.length === 0}" [pageSizeOptions]="[1, 5, 10, 25, 100]">
+  </mat-paginator>
+</div>
+<div id="no-results" *ngIf="this.NoResultsFound">
+  No results found
+</div>

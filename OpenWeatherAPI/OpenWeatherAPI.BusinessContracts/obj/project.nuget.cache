@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AKmrnQfmj7IRDAKm3XHpqhBJJQW/ZS4ViiqSGnUWCexf0yca6URF3SS/GlRSM+NErkF4n7pxiiX6xBhw6e8fXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.BusinessContracts\\OpenWeatherAPI.BusinessContracts.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marco\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

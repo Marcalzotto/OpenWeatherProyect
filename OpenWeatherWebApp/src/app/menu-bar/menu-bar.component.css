@@ -1,0 +1,33 @@
+#bar{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: navy;
+}
+
+#bar ul{
+    display: inline;
+}
+
+#bar span a:visited{
+    color: white;
+    text-decoration: none;
+
+}
+.app-name
+{
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 20px;
+    
+}
+
+.app-links{
+    color: white;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 20px;
+    float: none;
+    text-decoration: none;
+}

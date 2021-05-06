@@ -1,0 +1,40 @@
+<h1>{{title}}</h1>
+<div id="container">    
+    <div>
+        <form [formGroup]="OfficeListForm" (ngSubmit)="SearchOffices()">
+            <span><app-country-list [countryList]="countries" (countryIdEvent)='getCountryId($event)'></app-country-list></span>
+            <div>
+              <span class="search-office-btn"><button mat-flat-button color="primary" type="submit" [disabled]="!enableSubmitButton()">Search</button></span>
+              <span *ngIf="noResultsFound"><a mat-flat-button color="primary" routerLink="office"> New </a></span>
+            </div>
+        </form>
+    </div>
+    <div class="mat-container">
+        <span class="new-office-link" *ngIf="this.dataSource.data.length > 0"><a mat-flat-button color="primary" routerLink="office"> New </a></span>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="this.dataSource.data.length > 0">
+
+            <ng-container matColumnDef="Description">
+              <th mat-header-cell *matHeaderCellDef> Description </th>
+              <td mat-cell *matCellDef="let office"> {{office.description}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="City">
+              <th mat-header-cell *matHeaderCellDef> City </th>
+              <td mat-cell *matCellDef="let office"> {{office.city.name}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="Actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let office"> <button mat-raised-button color="basic" (click)="editOffice(office.id)">Edit</button>
+                                                    <button mat-raised-button color="warn" (click)="deleteOffice(office.id)">Delete</button>
+            </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [ngClass]="{'visible':this.dataSource.data.length === 0}" [pageSizeOptions]="[1, 5, 10, 25, 50]" showFirstLastButtons></mat-paginator> 
+          <span id="no-results" *ngIf="this.noResultsFound">No results found</span>
+    </div>
+</div>
+<router-outlet></router-outlet>
