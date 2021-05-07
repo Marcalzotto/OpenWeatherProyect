@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "OpenWeatherAPI.Entities/1.0.0": {
+        "runtime": {
+          "OpenWeatherAPI.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OpenWeatherAPI.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "OpenWeatherAPI.ModelContracts/1.0.0": {
+        "runtime": {
+          "OpenWeatherAPI.ModelContracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OpenWeatherAPI.ModelContracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
