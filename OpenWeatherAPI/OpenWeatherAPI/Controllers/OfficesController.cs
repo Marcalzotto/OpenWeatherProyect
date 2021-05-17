@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using OpenWeatherAPI.BusinessContracts.Services;
 using OpenWeatherAPI.Business.Models;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OpenWeatherAPI.Controllers
 {
@@ -32,6 +33,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="countryId">Id del pais al que pertenecen las oficinas</param>
         /// <returns>Devuelve status 200 con las oficinas, 404 si no exixte el pais buscado, 204 si no hay oficinas registradas para ese pais.</returns>
         [HttpGet("offices")]
+        [Authorize]
         public IActionResult GetOfficesByCountry([FromQuery(Name ="countryId")]int countryId, [FromQuery(Name="includeCities")]bool includeCities)
         {
             var exists = _countryService.CountryExists(countryId);
@@ -55,6 +57,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="id">Id de la oficina a buscar</param>
         /// <returns>Devuelve Status 200 con la informacion de la oficina, 404 si no existe la oficina buscada.</returns>
         [HttpGet("offices/{id}")]
+        [Authorize]
         public IActionResult GetOfficeById(int id)
         {
             var exists = _branchOfficeService.OfficeExists(id);
@@ -74,6 +77,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="office">Recibe la nueva oficina a asignar a una ciudad</param>
         /// <returns>Devuelve Status 400 si la oficina a crear no tiene datos, 404 si no existe la ciudad o 200 con la informacion de la nueva oficina.</returns>
         [HttpPost("offices")]
+        [Authorize]
         public IActionResult CreateOffice([FromBody] BranchOfficeDTO office) 
         {
             if (office == null)
@@ -104,6 +108,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="patchDocument">El array con objetos json que determinan las operaciones a realizar sobre determinados campos del registro</param>
         /// <returns>status 400 el objeto de operacion patch es nulo, 404 si no se encuentra la oficina, 200 si la operacion es exitosa, 500 si hay algun error al intentar actualizar el registro.</returns>
         [HttpPatch("offices/{officeId}")]
+        [Authorize]
         public IActionResult UpdateOffice(int officeId, [FromBody] JsonPatchDocument<BranchOfficeForUpdateDTO> patchDocument)
         {
             
@@ -140,6 +145,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="officeId">Recibe el Id de oficina de la oficina a eliminar</param>
         /// <returns>Devuelve Status 404 si la oficina no existe, o 500 si hay algun error al intentar borrar el registro, 200 si la operacion fue exitosa.</returns>
         [HttpDelete("offices/{officeId}")]
+        [Authorize]
         public IActionResult DeleteOffice([FromRoute] int officeId) 
         {
             if (!_branchOfficeService.OfficeExists(officeId)) 

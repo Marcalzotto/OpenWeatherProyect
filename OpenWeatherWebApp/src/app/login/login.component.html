@@ -1,0 +1,28 @@
+<div id="form-centered">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <h2>Login Form</h2>
+      <br/>
+      <mat-form-field>
+        <input matInput formControlName="email" placeholder="Enter email..." required>
+        <mat-error *ngIf="!getEmailErrorMsj()">{{this.emailErrorMsj}}</mat-error>
+      </mat-form-field>
+      <br/>
+      <br/>
+      <br/>
+      <mat-form-field>
+        <input matInput formControlName="password" type="password" placeholder="Enter password..." required>
+        <mat-error *ngIf="!getPasswordErrorMsj()">{{this.passwordErrorMsj}}</mat-error>
+      </mat-form-field>
+      <br/>
+      <br/>
+      <br/>
+        <button id="btn-submit" mat-raised-button color="primary" type="submit" [disabled]="!buttonDisabled()">Sing in</button>
+        <button id="btn-reset" mat-raised-button color="basic" (click)="resetLogin()">Clear</button>
+    </form>
+    <div id="invalid-login" *ngIf="invalidLogin">
+      <span>{{loginMessaje}} <mat-icon color={{color}}>{{icon}}</mat-icon></span>
+    </div>
+    <div id="register-link">
+      <a routerLink="/register">have you already registered?</a>
+    </div>
+</div>

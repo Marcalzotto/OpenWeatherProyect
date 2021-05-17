@@ -1,0 +1,30 @@
+#container{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.form-control{
+    margin-top: 30px;
+}
+.form-control span{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#login-link{
+    margin-top: 30px;
+    text-align: center;
+    color: royalblue;
+}
+
+#login-link a{
+    text-decoration: none;
+}
+
+#login-link a:visited{
+    color: royalblue;
+}
+
+#final-messaje{
+    margin-top: 30px;
+}

@@ -20,8 +20,12 @@ export class OfficeService
 
         params = params.append('countryId', countryId);
         params = params.append('includeCities', includeCities);
+
+        let httpOptions = {
+            params: params
+        }
  
-        return this._http.get<BranchOfficeDTO[]>(this.url,{params});
+        return this._http.get<BranchOfficeDTO[]>(this.url,httpOptions);
     }
 
     
@@ -29,42 +33,25 @@ export class OfficeService
     {
         this.url = `${environment.environment}/api/offices`;
         
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type':  'application/json',
-            })
-        } 
-        return this._http.post<BranchOfficeDTO>(this.url, office, httpOptions);
+        return this._http.post<BranchOfficeDTO>(this.url, office);
     }
 
     getById(id:string):Observable<BranchOfficeDTO>
     {
         this.url = `${environment.environment}/api/offices/${id}`;
-        
+
         return this._http.get<BranchOfficeDTO>(this.url);       
     }
     
     patchOffice(id:number, operations:Operation[])
     {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type':  'application/json',
-            })
-        }
-
         this.url = `${environment.environment}/api/offices/${id}`;
-        return this._http.patch(this.url, operations, httpOptions);
+        return this._http.patch(this.url, operations);
     }
 
     deleteOffice(id:number)
     {
-        const httpOptions = {
-            headers: new HttpHeaders({
-                'Content-Type':  'application/json',
-            })
-        }
-
         this.url = `${environment.environment}/api/offices/${id}`;
-        return this._http.delete(this.url, httpOptions);
+        return this._http.delete(this.url);
     }
 }

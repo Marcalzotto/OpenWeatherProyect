@@ -9,6 +9,7 @@ import { WeatherConditionService } from '../shared/services/weathercondition.ser
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { AuthService } from '../shared/services/auth.service';
 
 interface Units{
   value:number;
@@ -83,6 +84,7 @@ export class WeatherReportComponent implements OnInit {
     private _countryService:CountryService,
     private _officeService:OfficeService,
     private _weatherConditionService:WeatherConditionService,
+    private _authService:AuthService,
     private changeDetectorRef: ChangeDetectorRef
   ) {}
 
@@ -96,6 +98,10 @@ export class WeatherReportComponent implements OnInit {
       this.NoResultsFound = false;
 
       this.getCountries();
+
+      let token = this._authService.getAuthorizationToken();
+      console.log(this._authService.getTokenExpirationDate(token));
+
   }
 
   getCountryId(countryId:number){

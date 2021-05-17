@@ -41,15 +41,15 @@ namespace OpenWeatherAPI.Data.Repositories
         {
             List<WeatherCondition> collection = new List<WeatherCondition>();
             var weatherCollection = _mapper.Map<IEnumerable<WeatherCondition>>(weather);
-            
 
-            foreach (var item in weatherCollection) 
+
+            foreach (var item in weatherCollection)
             {
-                _context.WeatherCondition.Add(item);
+                _context.WeatherConditions.Add(item);
                 this.CommitChanges();
-                
+
                 var id = item.Id;
-                var foundedItem = _context.WeatherCondition.Include(c => c.WeatherType)
+                var foundedItem = _context.WeatherConditions.Include(c => c.WeatherTypes)
                                                             .Include(c => c.City)
                                                             .ThenInclude(ci => ci.BranchOffice)
                                                             .Where(c => c.Id == id)
@@ -59,6 +59,7 @@ namespace OpenWeatherAPI.Data.Repositories
             }
 
             return _mapper.Map<IEnumerable<WeatherConditionDTO>>(collection);
+
         }
 
         /// <summary>
@@ -76,14 +77,14 @@ namespace OpenWeatherAPI.Data.Repositories
 
             foreach (var cityId in cities)
             {
-                var conditions = _context.WeatherCondition.Include(c => c.WeatherType)
+                var conditions = _context.WeatherConditions.Include(c => c.WeatherTypes)
                                                           .Include(c => c.City)
                                                           .ThenInclude(ci => ci.BranchOffice)
                                                           .Where(c => c.CityId == cityId)
                                                           .Where(c => c.RegDate >= dateFrom)
                                                           .Where(c => c.RegDate <= dateTo)
                                                           .OrderBy(c => c.RegDate).ToList();
-                                                          
+
 
                 collection = collection.Concat(conditions).ToList();
             }

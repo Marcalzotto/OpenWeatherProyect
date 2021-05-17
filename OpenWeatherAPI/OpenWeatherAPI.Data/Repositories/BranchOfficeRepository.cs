@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-
+using System;
 
 namespace OpenWeatherAPI.Data.Repositories
 {
@@ -38,12 +38,15 @@ namespace OpenWeatherAPI.Data.Repositories
         {
             if (includeCities)
             {
-                var offices = _context.BranchOffice.Include(b => b.City).Where(b => b.City.CountryId == countryId).AsEnumerable();
+                var offices = _context.BranchOffices.Include(b => b.City)
+                    .Where(b => b.City.CountryId == countryId).AsEnumerable();
+
                 return _mapper.Map<IEnumerable<BranchOfficeDTO>>(offices);
             }
             else
             {
-                var offices = _context.BranchOffice.Where(b => b.City.CountryId == countryId).AsEnumerable();
+                var offices = _context.BranchOffices
+                    .Where(b => b.City.CountryId == countryId).AsEnumerable();
                 return _mapper.Map<IEnumerable<BranchOfficeDTO>>(offices);
             }
         }
@@ -55,7 +58,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>Devuelve una entidad de datos oficina mapeada a DTO de oficina</returns>
         public BranchOfficeDTO GetOfficeById(int OfficeId)
         {
-            var office = this._context.BranchOffice.Include(c => c.City)
+            var office = this._context.BranchOffices.Include(c => c.City)
                                                    .ThenInclude(co => co.Country)
                                                    .Where(o => o.Id == OfficeId).FirstOrDefault();
 
@@ -69,7 +72,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>Entidad de datos oficina mapeada a DTO de oficina.</returns>
         public BranchOfficeForUpdateDTO GetOfficeForUpdate(int OfficeId)
         {
-            var office = this._context.BranchOffice.Include(c => c.City)
+            var office = this._context.BranchOffices.Include(c => c.City)
                                                    .ThenInclude(co => co.Country)
                                                    .Where(o => o.Id == OfficeId).FirstOrDefault();
 
@@ -110,7 +113,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>Devuelve el numero de filas afectadas</returns>
         public int UpdateOffice(int officeId, BranchOfficeForUpdateDTO office)
         {
-            var officeToUpdate = _context.BranchOffice.FirstOrDefault(o => o.Id == officeId);
+            var officeToUpdate = _context.BranchOffices.FirstOrDefault(o => o.Id == officeId);
             _mapper.Map(office, officeToUpdate);
             return this.CommitChanges();
         }
@@ -122,7 +125,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>True si existe la ciudad o false si no se encuentra.</returns>
         public bool CityExists(int cityId)
         {
-            var exists = _context.City.Any(c => c.Id == cityId);
+            var exists = _context.Cities.Any(c => c.Id == cityId);
             return exists;
         }
 
@@ -133,7 +136,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>True si existe la oficina o false si no se encuentra.</returns>
         public bool OfficeExists(int officeId)
         {
-            var exists = _context.BranchOffice.Any(o => o.Id == officeId);
+            var exists = _context.BranchOffices.Any(o => o.Id == officeId);
             return exists;
         }
 
@@ -144,7 +147,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>Lista de ciudades que no tienen oficina asignada.</returns>
         public IEnumerable<CityDTO> GetCitiesWithOutOffice(int countryId)
         {
-            var cities = _context.City.Where(c => c.CountryId == countryId).Select(c =>new
+            var cities = _context.Cities.Where(c => c.CountryId == countryId).Select(c => new
             {
                 Id = c.Id,
                 Name = c.Name,
@@ -154,7 +157,7 @@ namespace OpenWeatherAPI.Data.Repositories
                 CountryId = c.CountryId,
                 Country = c.Country,
                 BranchOffice = c.BranchOffice,
-                WeatherCondition = c.WeatherCondition
+                WeatherCondition = c.WeatherConditions
             }).ToList();
 
             var offices = this.GetAll(o => o.City.CountryId == countryId).Select(o => new { Id = o.CityId }).ToList();
@@ -171,7 +174,7 @@ namespace OpenWeatherAPI.Data.Repositories
                                                                     CountryId = c.CountryId,
                                                                     Country = c.Country,
                                                                     BranchOffice = c.BranchOffice,
-                                                                    WeatherCondition = c.WeatherCondition
+                                                                    WeatherConditions = c.WeatherCondition
                                                                 }).Where(c => c.BranchOffice == null).ToList();
 
             return _mapper.Map<IEnumerable<CityDTO>>(citiesWithOutOffice);
@@ -184,7 +187,7 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <returns>True si existe la ciudad o false si no se encuentra.</returns>
         public bool OfficeExistsByCity(int cityId)
         {
-            var exists = _context.BranchOffice.Any(o => o.CityId == cityId);
+            var exists = _context.BranchOffices.Any(o => o.CityId == cityId);
             return exists;
         }
     }

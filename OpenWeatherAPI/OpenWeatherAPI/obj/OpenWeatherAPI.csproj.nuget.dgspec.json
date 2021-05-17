@@ -95,6 +95,9 @@
               "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.DataContracts\\OpenWeatherAPI.DataContracts.csproj": {
                 "projectPath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.DataContracts\\OpenWeatherAPI.DataContracts.csproj"
               },
+              "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Data\\OpenWeatherAPI.Data.csproj": {
+                "projectPath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Data\\OpenWeatherAPI.Data.csproj"
+              },
               "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Entities\\OpenWeatherAPI.Entities.csproj": {
                 "projectPath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Entities\\OpenWeatherAPI.Entities.csproj"
               },
@@ -267,7 +270,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[5.0.5, )"
             }
           },
           "imports": [
@@ -524,6 +527,14 @@
               "target": "Package",
               "version": "[5.2.7, )"
             },
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -532,7 +543,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

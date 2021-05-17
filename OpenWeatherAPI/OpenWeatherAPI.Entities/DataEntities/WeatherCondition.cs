@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace OpenWeatherAPI.Data.DataEntities
 {
     public partial class WeatherCondition
     {
         public WeatherCondition()
         {
-            WeatherType = new HashSet<WeatherType>();
+            WeatherTypes = new HashSet<WeatherType>();
         }
 
         public int Id { get; set; }
@@ -37,6 +39,6 @@ namespace OpenWeatherAPI.Data.DataEntities
         public DateTime RegDate { get; set; }
 
         public virtual City City { get; set; }
-        public virtual ICollection<WeatherType> WeatherType { get; set; }
+        public virtual ICollection<WeatherType> WeatherTypes { get; set; }
     }
 }

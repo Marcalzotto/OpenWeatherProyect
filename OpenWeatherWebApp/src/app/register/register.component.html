@@ -1,0 +1,69 @@
+<div id="container">   
+    <h2>Register Form</h2> 
+    <form [formGroup]="registerForm" (submit)="registerSubmit()">
+        <div class="form-control">
+            <span>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="Enter your name...">
+                    <mat-error *ngIf="!nameErrorValidation()">{{nameErrorMessaje}}</mat-error>
+                </mat-form-field>
+            </span>
+            <span>
+                <mat-form-field>
+                    <input matInput  formControlName="surname" placeholder="Enter your surname...">
+                    <mat-error *ngIf="!surnameErrorValidation()">{{surnameErrorMessaje}}</mat-error>
+                </mat-form-field>
+            </span>
+        </div>
+        <div class="form-control">
+            <span>
+                <mat-form-field>
+                    <input matInput  formControlName="email" placeholder="Enter your email...">
+                    <mat-error *ngIf="!mailErrorValidation()">{{mailErrorMessaje}}</mat-error>
+                </mat-form-field>
+            </span>
+            <span>
+                <mat-form-field>
+                    <mat-label>Date of birth</mat-label>
+                    <input matInput formControlName="birthDate" [matDatepicker]="picker" disabled="true">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker disabled="false"></mat-datepicker>
+                    <mat-error *ngIf="this.DateValidator">Invalid birth date</mat-error>
+                  </mat-form-field>
+            </span>
+        </div>
+       
+        <div class="form-control">
+            <span>
+                <mat-form-field>
+                    <input matInput type="password" formControlName="password" placeholder="Enter your password...">
+                    <mat-error *ngIf="!passwordErrorValidation()">{{passwordErrorMessaje}}</mat-error>
+                </mat-form-field>
+            </span>
+            <span>
+                <mat-form-field>
+                    <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm password...">
+                    <mat-error *ngIf="!confirmPasswordErrorValidation()">{{confirmPasswordErrorMessaje}}</mat-error>
+                </mat-form-field>
+            </span>
+        </div>
+        <div class="form-control">
+            <mat-error *ngIf="!equivalentPasswords()">{{equivalentPasswordsErrorMessaje}}</mat-error>
+        </div>
+            <div class="form-control">
+            <span>
+                <button id="btn-submit" mat-raised-button color="primary" type="submit"[disabled]="!disableButton()">Register</button>
+            </span>
+            <span>
+                <button id="btn-reset" mat-raised-button color="basic" (click)="clearForm()">Clear</button>
+            </span>
+        </div>
+        <div id="final-messaje">
+            <span>{{registerMessaje}} <mat-icon color={{color}}>{{icon}}</mat-icon></span>
+        </div>
+        <div id="login-link">
+            <a routerLink="/login">Go to Login</a>
+          </div>
+    </form>
+
+</div>

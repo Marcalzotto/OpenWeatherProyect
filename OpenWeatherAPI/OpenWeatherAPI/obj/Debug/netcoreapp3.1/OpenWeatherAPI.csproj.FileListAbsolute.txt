@@ -83,9 +83,6 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.csprojAssemblyReference.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.AssemblyInfoInputs.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.AssemblyInfo.cs
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.csproj.CoreCompileInputs.cache
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.RazorTargetAssemblyInfo.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.csproj.CopyComplete
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\staticwebassets\OpenWeatherAPI.StaticWebAssets.Manifest.cache
@@ -93,3 +90,14 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.pdb
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.genruntimeconfig.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.csproj.CoreCompileInputs.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\obj\Debug\netcoreapp3.1\OpenWeatherAPI.MvcApplicationPartsAssemblyInfo.cache

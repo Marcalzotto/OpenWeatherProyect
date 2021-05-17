@@ -6,4 +6,3 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Entities\obj\Release\netcoreapp3.1\OpenWeatherAPI.Entities.csproj.CoreCompileInputs.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Entities\obj\Release\netcoreapp3.1\OpenWeatherAPI.Entities.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Entities\obj\Release\netcoreapp3.1\OpenWeatherAPI.Entities.pdb
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Entities\obj\Release\netcoreapp3.1\OpenWeatherAPI.Entities.csprojAssemblyReference.cache

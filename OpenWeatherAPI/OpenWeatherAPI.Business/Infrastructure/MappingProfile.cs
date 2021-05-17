@@ -34,8 +34,8 @@ namespace OpenWeatherAPI.Business.Infrastructure
                 .ForMember(dest => dest.Clouds, opt => opt.MapFrom(src => src.Clouds))
                 .ForMember(dest => dest.Dt, opt => opt.MapFrom(src => src.Dt))
                 .ForPath(dest => dest.Units.FeelsLikeDefault, opt => opt.MapFrom(src => src.FeelsLike))
-                .ForPath(dest => dest.Units.FeelsLikeMetrics, opt => opt.MapFrom(src => Math.Round((src.FeelsLike - 273.15),2)))
-                .ForPath(dest => dest.Units.FeelsLikeImperial, opt => opt.MapFrom(src => Math.Round(((src.FeelsLike - 273.15) * (9 / 5) + 32),2)))
+                .ForPath(dest => dest.Units.FeelsLikeMetrics, opt => opt.MapFrom(src => Math.Round((src.FeelsLike - 273.15), 2)))
+                .ForPath(dest => dest.Units.FeelsLikeImperial, opt => opt.MapFrom(src => Math.Round(((src.FeelsLike - 273.15) * (9 / 5) + 32), 2)))
                 .ForMember(dest => dest.GroundLevel, opt => opt.MapFrom(src => src.GroundLevel))
                 .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.Humidity))
                 .ForMember(dest => dest.Pressure, opt => opt.MapFrom(src => src.Pressure))
@@ -52,7 +52,7 @@ namespace OpenWeatherAPI.Business.Infrastructure
                 .ForPath(dest => dest.Units.TempMetrics, opt => opt.MapFrom(src => Math.Round((src.TempMin - 273.15), 2)))
                 .ForPath(dest => dest.Units.TempImperial, opt => opt.MapFrom(src => Math.Round(((src.FeelsLike - 273.15) * (9 / 5) + 32), 2)))
                 .ForPath(dest => dest.Units.TempMinDefault, opt => opt.MapFrom(src => src.TempMin))
-                .ForPath(dest => dest.Units.TempMinMetrics, opt => opt.MapFrom(src => Math.Round((src.TempMin - 273.15),2)))
+                .ForPath(dest => dest.Units.TempMinMetrics, opt => opt.MapFrom(src => Math.Round((src.TempMin - 273.15), 2)))
                 .ForPath(dest => dest.Units.TempMinImperial, opt => opt.MapFrom(src => Math.Round(((src.FeelsLike - 273.15) * (9 / 5) + 32), 2)))
                 .ForPath(dest => dest.Units.TempMaxDefault, opt => opt.MapFrom(src => src.TempMax))
                 .ForPath(dest => dest.Units.TempMaxMetrics, opt => opt.MapFrom(src => Math.Round((src.TempMin - 273.15), 2)))
@@ -61,7 +61,7 @@ namespace OpenWeatherAPI.Business.Infrastructure
                 .ForMember(dest => dest.WindDegrees, opt => opt.MapFrom(src => src.WindDegrees))
                 .ForMember(dest => dest.WindSpeed, opt => opt.MapFrom(src => src.WindSpeed))
                 .ForMember(dest => dest.WindGust, opt => opt.MapFrom(src => src.WindGust))
-                .ForMember(dest => dest.WeatherType, opt => opt.MapFrom(src => src.WeatherType));
+                .ForMember(dest => dest.WeatherType, opt => opt.MapFrom(src => src.WeatherTypes));
 
             CreateMap<BranchOfficeDTO, BranchOffice>().ReverseMap();
 
@@ -100,7 +100,7 @@ namespace OpenWeatherAPI.Business.Infrastructure
                 .ForMember(dest => dest.WindDegrees, opt => opt.MapFrom(src => src.Wind.Deg))
                 .ForMember(dest => dest.WindSpeed, opt => opt.MapFrom(src => src.Wind.Speed))
                 .ForMember(dest => dest.WindGust, opt => opt.MapFrom(src => src.Wind.Gust))
-                .ForMember(dest => dest.WeatherType, opt => opt.MapFrom(src => src.Weather));
+                .ForMember(dest => dest.WeatherTypes, opt => opt.MapFrom(src => src.Weather));
 
             CreateMap<WeatherDescriptionDTO, WeatherType>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
@@ -110,6 +110,16 @@ namespace OpenWeatherAPI.Business.Infrastructure
                 .ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.Icon));
 
             CreateMap<WeatherType, WeatherTypeDTO>().ReverseMap();
+
+            CreateMap<User, UserDTO>().ReverseMap();
+
+            CreateMap<UserForCreateDTO, UserDTO>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.Surname, opt => opt.MapFrom(src => src.Surname))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
+                .ForMember(dest => dest.Salt, opt => opt.Ignore());
         }
     }
 }

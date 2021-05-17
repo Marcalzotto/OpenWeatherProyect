@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using OpenWeatherAPI.Models.Models;
 using System.Net;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OpenWeatherAPI.Controllers
 {
@@ -35,6 +36,7 @@ namespace OpenWeatherAPI.Controllers
        /// <param name="cities">un arreglo con id de las ciudades para las cuales se consultara a la api del clima la condicion climatica actual</param>
        /// <returns>devuelve un status 200 con la informacion de las condiciones climaticas o 204 si no se obtuvo informacion.</returns>
         [HttpGet("weather-conditions")]
+        [Authorize]
         public IActionResult GetWeatherConditions([FromQuery(Name = "id")] int[] cities) 
         {
             var ApiUrl = _configuration.GetSection("ApiSettings").GetSection("ApiUrl").Value;
@@ -86,6 +88,7 @@ namespace OpenWeatherAPI.Controllers
         /// <param name="dateTo">Fecha maxima de registracion de una condicion climatica</param>
         /// <returns></returns>
         [HttpGet("weather-conditions/history")]
+        [Authorize]
         public IActionResult GetWeatherConditionsHist([FromQuery(Name = "id")] int[] cities, [FromQuery(Name = "dateFrom")] DateTime dateFrom, [FromQuery(Name = "dateTo")] DateTime dateTo) 
         {
             var list = _weatherConditionService.Get(cities, dateFrom, dateTo);

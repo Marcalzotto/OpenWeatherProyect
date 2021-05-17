@@ -1,0 +1,34 @@
+#form-centered
+{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#invalid-login
+{
+    margin-top: 30px;
+    color: red;
+}
+
+#btn-submit{
+    margin-top: 10px;
+    margin-right: 15px;
+}   
+
+#btn-reset{
+    margin-top: 10px;
+}
+
+#register-link{
+    margin-top: 30px;
+    text-align: center;
+    color: royalblue;
+}
+
+#register-link a{
+    text-decoration: none;
+}
+
+#register-link a:visited{
+    color: royalblue;
+}

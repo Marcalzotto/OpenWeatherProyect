@@ -18,3 +18,5 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Business\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Business.csproj.CopyComplete
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Business\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Business.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Business\obj\Debug\netcoreapp3.1\OpenWeatherAPI.Business.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Business\bin\Debug\netcoreapp3.1\OpenWeatherAPI.Data.dll
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.Business\bin\Debug\netcoreapp3.1\OpenWeatherAPI.Data.pdb

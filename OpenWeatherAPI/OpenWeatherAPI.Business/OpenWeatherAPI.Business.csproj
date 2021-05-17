@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OpenWeatherAPI.BusinessContracts\OpenWeatherAPI.BusinessContracts.csproj" />
     <ProjectReference Include="..\OpenWeatherAPI.DataContracts\OpenWeatherAPI.DataContracts.csproj" />
+    <ProjectReference Include="..\OpenWeatherAPI.Data\OpenWeatherAPI.Data.csproj" />
     <ProjectReference Include="..\OpenWeatherAPI.Entities\OpenWeatherAPI.Entities.csproj" />
     <ProjectReference Include="..\OpenWeatherAPI.Models\OpenWeatherAPI.Models.csproj" />
   </ItemGroup>
