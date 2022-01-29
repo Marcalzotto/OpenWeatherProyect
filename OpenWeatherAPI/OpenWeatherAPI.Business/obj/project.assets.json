@@ -7484,6 +7484,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.BusinessContracts\\OpenWeatherAPI.BusinessContracts.csproj": {
               "projectPath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.BusinessContracts\\OpenWeatherAPI.BusinessContracts.csproj"
@@ -7511,6 +7512,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
@@ -7532,7 +7534,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

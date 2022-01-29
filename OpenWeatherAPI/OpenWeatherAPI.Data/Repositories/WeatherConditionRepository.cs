@@ -19,6 +19,7 @@ namespace OpenWeatherAPI.Data.Repositories
     public class WeatherConditionRepository : BaseRepository<WeatherCondition>,IWeatherConditionRepository
     {
         private readonly IMapper _mapper;
+        private readonly ICountryRepository _country;
 
         /// <summary>
         /// Constructor del repositorio del clima
@@ -26,10 +27,12 @@ namespace OpenWeatherAPI.Data.Repositories
         /// <param name="context">Instancia del DbContext a inyectar en el constructor de la base padre</param>
         /// <param name="mapper">Instancia de automapper para realizar los mapping de entidades de datos a DTO</param>
         public WeatherConditionRepository(OpenWeatherDBContext context,
-                                          IMapper mapper
+                                          IMapper mapper,
+                                          ICountryRepository country
                                           ) :base(context)
         {
             _mapper = mapper;
+            _country = country;
         }
 
         /// <summary>

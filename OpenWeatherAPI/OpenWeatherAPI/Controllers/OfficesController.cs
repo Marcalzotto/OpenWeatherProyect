@@ -37,9 +37,11 @@ namespace OpenWeatherAPI.Controllers
         public IActionResult GetOfficesByCountry([FromQuery(Name ="countryId")]int countryId, [FromQuery(Name="includeCities")]bool includeCities)
         {
             var exists = _countryService.CountryExists(countryId);
+
             if (exists)
             {
                 var officesForCountry = _branchOfficeService.GetByCountryId(countryId, includeCities);
+
                 if (officesForCountry.Count() > 0)
                     return Ok(officesForCountry);
                 else

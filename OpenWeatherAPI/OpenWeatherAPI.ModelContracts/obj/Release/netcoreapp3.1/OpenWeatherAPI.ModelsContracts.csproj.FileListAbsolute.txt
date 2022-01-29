@@ -6,4 +6,4 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.ModelContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.csproj.CoreCompileInputs.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.ModelContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.ModelContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.pdb
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.ModelContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.csprojAssemblyReference.cache
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.ModelContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.csproj.AssemblyReference.cache

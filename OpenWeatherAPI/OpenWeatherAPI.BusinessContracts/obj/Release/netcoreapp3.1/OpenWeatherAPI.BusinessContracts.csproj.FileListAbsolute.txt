@@ -5,10 +5,10 @@ C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWe
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.Models.pdb
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\bin\Release\netcoreapp3.1\OpenWeatherAPI.ModelsContracts.pdb
-C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.csprojAssemblyReference.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.AssemblyInfoInputs.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.AssemblyInfo.cs
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.csproj.CoreCompileInputs.cache
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.csproj.CopyComplete
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.dll
 C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.pdb
+C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI.BusinessContracts\obj\Release\netcoreapp3.1\OpenWeatherAPI.BusinessContracts.csproj.AssemblyReference.cache

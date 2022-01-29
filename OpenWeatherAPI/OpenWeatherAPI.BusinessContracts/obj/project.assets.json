@@ -846,6 +846,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Models\\OpenWeatherAPI.Models.csproj": {
               "projectPath": "C:\\Users\\marco\\Desktop\\Altromondo\\MvFactory\\OpenWeatherMap\\OpenWeatherAPI\\OpenWeatherAPI.Models\\OpenWeatherAPI.Models.csproj"
@@ -861,6 +862,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -876,7 +878,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

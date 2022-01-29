@@ -5,5 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\marco\Desktop\Altromondo\MvFactory\OpenWeatherMap\OpenWeatherAPI\OpenWeatherAPI\bin\Release\netcoreapp3.1\OpenWeatherAPI\</_PublishTargetUrl>
+    <History>True|2021-05-29T04:22:40.8654525Z;True|2021-05-28T11:07:30.6843699-03:00;</History>
   </PropertyGroup>
 </Project>
